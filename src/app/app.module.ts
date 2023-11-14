@@ -3,14 +3,16 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
-import { NotfoundComponent } from './demo/components/notfound/notfound.component';
-import { ProductService } from './demo/service/product.service';
-import { CountryService } from './demo/service/country.service';
-import { CustomerService } from './demo/service/customer.service';
-import { EventService } from './demo/service/event.service';
-import { IconService } from './demo/service/icon.service';
-import { NodeService } from './demo/service/node.service';
-import { PhotoService } from './demo/service/photo.service';
+import { NotfoundComponent } from './beach/components/notfound/notfound.component';
+import { ProductService } from './beach/service/product.service';
+import { CountryService } from './beach/service/country.service';
+import { CustomerService } from './beach/service/customer.service';
+import { EventService } from './beach/service/event.service';
+import { IconService } from './beach/service/icon.service';
+import { NodeService } from './beach/service/node.service';
+import { PhotoService } from './beach/service/photo.service';
+import { MapsModule } from './maps/maps.module';
+
 
 @NgModule({
     declarations: [
@@ -18,7 +20,8 @@ import { PhotoService } from './demo/service/photo.service';
     ],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        MapsModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

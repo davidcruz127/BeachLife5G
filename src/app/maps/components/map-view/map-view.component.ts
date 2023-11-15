@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { MapService, PlacesService } from '../../services';
-import mapboxgl, { Marker, Popup } from 'mapbox-gl';
+import mapboxgl, { LngLat, Marker, Popup } from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -42,10 +42,13 @@ export class MapViewComponent implements AfterViewInit {
 
     const map = new mapboxgl.Map({
       container: this.mapDivElement.nativeElement, // container ID
-      style: 'mapbox://styles/mapbox/streets-v12',
-      //style: 'mapbox://styles/mapbox/satellite-streets-v12',
-      center: this.placesServices.userLocation, // starting position [lng, lat]
-      ...start
+      style: 'mapbox://styles/mapbox/streets-v12?optimize=true',
+      //style: 'mapbox://styles/davidcruz127/clozw54gp016s01pbgux8fhsl',
+      center: [-15.42785, 28.14093],
+      zoom: 14,
+      bearing: 190,
+      pitch: 20
+
     });
 
     map.on('style.load', () => {
@@ -67,14 +70,20 @@ export class MapViewComponent implements AfterViewInit {
         });
     });
 
+
+    // TODO: Pendiente animación lento como cammello
     map.flyTo({
-        ...end, // Fly to the selected target
-        duration: 12000, // Animate over 12 seconds
+        center: [-15.42785, 28.14093],
+        zoom: 14.9,
+        bearing: 80,
+        pitch: 78,
+        duration: 8000, // Animate over 12 seconds
         essential: true // This animation is considered essential with
         //respect to prefers-reduced-motion
         });
 
     // Definimos PopUp
+    /*
     const popup = new Popup()
       .setHTML(`
         <h6>Aqui estoy</h6>
@@ -88,6 +97,7 @@ export class MapViewComponent implements AfterViewInit {
       .addTo(map)
 
     this.mapService.setMap(map);
+    */
   }
 
 }

@@ -6,9 +6,13 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build-github": "npm run delete:docs && npm run copy:dist",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "delete:docs": "del docs",
+        "copy:dist": "copyfiles dist/BeachLife5G/* ./docs -f"
+
     },
     "private": true,
     "dependencies": {

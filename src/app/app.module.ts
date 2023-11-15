@@ -14,6 +14,7 @@ import { PhotoService } from './beach/service/photo.service';
 import { MapsModule } from './maps/maps.module';
 
 
+
 @NgModule({
     declarations: [
         AppComponent, NotfoundComponent

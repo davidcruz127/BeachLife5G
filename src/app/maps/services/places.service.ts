@@ -10,7 +10,7 @@ import { MapService } from './map.service';
 export class PlacesService {
 
 
-  public userLocation?: [number, number];
+  public userLocation?: [number, number] = [123, 3232];
 
   public isLoadingPlaces: boolean = false;
   public places: Feature[] = [];
@@ -22,7 +22,7 @@ export class PlacesService {
   constructor(private placesApi: PlacesApiClient,
               private mapService: MapService)
   {
-    this.getUserLocation();
+    //this.getUserLocation();
   }
 
   public async getUserLocation(): Promise<[number, number]> {

@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/BeachLife5G",
+                        "outputPath": "dist/beachLife5G",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": [
@@ -74,14 +74,14 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "BeachLife5G:build"
+                        "browserTarget": "sakai-ng:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "BeachLife5G:build:production"
+                            "browserTarget": "sakai-ng:build:production"
                         },
                         "development": {
-                            "browserTarget": "BeachLife5G:build:development"
+                            "browserTarget": "sakai-ng:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "BeachLife5G:build"
+                        "browserTarget": "sakai-ng:build"
                     }
                 },
                 "test": {

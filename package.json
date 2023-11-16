@@ -12,7 +12,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "delete:docs": "del docs",
-        "copy:dist": "copyfiles dist/BeachLife5G/* ./docs -f"
+        "copy:dist": "copyfiles ./dist/beachLife5G/* ./docs -f"
     },
     "private": true,
     "dependencies": {

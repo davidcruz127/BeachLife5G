@@ -12,6 +12,7 @@ import { DashboardsRoutingModule } from './dashboard-routing.module';
 import { MapsModule } from 'src/app/maps/maps.module';
 
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -24,6 +25,7 @@ import { MapsModule } from 'src/app/maps/maps.module';
         ButtonModule,
         DashboardsRoutingModule,
         MapsModule
+
     ],
     declarations: [DashboardComponent]
 })

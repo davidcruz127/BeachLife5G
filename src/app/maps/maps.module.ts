@@ -10,6 +10,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 
 
 
+
 @NgModule({
   declarations: [
     MapScreenComponent,

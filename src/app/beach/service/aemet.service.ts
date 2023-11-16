@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+
 import { environment } from 'src/environments/environment';
+import { InicialResponse } from '../interfaces/AEMET/InicialResponse';
+import { BasicResponse } from '../interfaces/AEMET/BasicResponse';
+import { Observable, concatMap, of, tap } from 'rxjs';
+
 
 @Injectable()
 export class AEMETService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {}
 
-    apiUrl = environment.AEMET_Url;
+    private apiUrl = environment.AEMET_Url;
+    private url = "observacion/convencional/datos/estacion/C659M/";
 
-    getUltimosDatos() {
-        return this.http.get(this.apiUrl)
-            .pipe(map((response: any) => {
-                console.log(response)
-                return response;
-        }));
+    getUrlAcceso():Observable<InicialResponse> {
+        return this.http.get<InicialResponse>(`${this.apiUrl}/${this.url}?api_key=${environment.opendata_apike}`)
+    }
+
+    getInfoMeteo(url: string):Observable<BasicResponse> {
+        return this.http.get<BasicResponse>(url)
     }
 }

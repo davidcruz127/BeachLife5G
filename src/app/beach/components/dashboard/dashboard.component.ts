@@ -2,8 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Product } from '../../api/product';
 import { ProductService } from '../../service/product.service';
-import { Subscription } from 'rxjs';
+import { Subscription, switchMap } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { AEMETService } from '../../service/aemet.service';
+import { BasicResponse } from '../../interfaces/AEMET/BasicResponse';
+import { InicialResponse } from '../../interfaces/AEMET/InicialResponse';
 
 
 @Component({
@@ -21,13 +24,24 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     subscription!: Subscription;
 
-    constructor(private productService: ProductService, public layoutService: LayoutService) {
+    subscriptionMeteoInfo!: Subscription;
+
+    public meteoInfo?: BasicResponse;
+
+    constructor(private productService: ProductService,
+                public layoutService: LayoutService,
+                public aemetService: AEMETService)
+
+    {
         this.subscription = this.layoutService.configUpdate$.subscribe(() => {
             this.initChart();
         });
+
     }
 
     ngOnInit() {
+
+        // Grafica
         this.initChart();
         this.productService.getProductsSmall().then(data => this.products = data);
 
@@ -35,6 +49,21 @@ export class DashboardComponent implements OnInit, OnDestroy {
             { label: 'Add New', icon: 'pi pi-fw pi-plus' },
             { label: 'Remove', icon: 'pi pi-fw pi-minus' }
         ];
+
+        // Meterología
+        this.initMeteo();
+    }
+
+    initMeteo(){
+
+        this.aemetService.getUrlAcceso()
+        .pipe(
+            switchMap( ({datos}) => this.aemetService.getInfoMeteo(datos))
+          ).subscribe( resp => {
+
+            this.meteoInfo = resp[0];
+            return;
+          });
     }
 
     initChart() {

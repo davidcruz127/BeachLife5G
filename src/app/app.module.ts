@@ -12,6 +12,7 @@ import { IconService } from './beach/service/icon.service';
 import { NodeService } from './beach/service/node.service';
 import { PhotoService } from './beach/service/photo.service';
 import { MapsModule } from './maps/maps.module';
+import { AEMETService } from './beach/service/aemet.service';
 
 
 
@@ -27,7 +28,7 @@ import { MapsModule } from './maps/maps.module';
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService
+        PhotoService, ProductService, AEMETService
     ],
     bootstrap: [AppComponent]
 })

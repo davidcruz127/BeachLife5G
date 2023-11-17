@@ -23,18 +23,18 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Datos Usuarios',
                 items: [
-                    { label: 'Ocupación', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Distribución', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
+                    { label: 'Ocupación', icon: 'pi pi-fw pi-users', routerLink: ['/uikit/charts'] },
+                    { label: 'Distribución', icon: 'pi pi-fw pi-map', routerLink: ['/uikit/media'] },
                 ]
             },
             {
                 label: 'Meteorología',
                 items: [
-                    { label: 'Viento', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Temperatura', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Nubes', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Olas', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Calidad del aire', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
+                    { label: 'Viento', icon: 'pi pi-fw pi-chart-bar' },
+                    { label: 'Temperatura', icon: 'pi pi-fw pi-chart-bar' },
+                    { label: 'Nubes', icon: 'pi pi-fw pi-chart-bar'},
+                    { label: 'Olas', icon: 'pi pi-fw pi-chart-bar'},
+                    { label: 'Calidad del aire', icon: 'pi pi-fw pi-chart-bar' },
                 ]
             }
         ];

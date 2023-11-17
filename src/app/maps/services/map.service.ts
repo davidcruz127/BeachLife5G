@@ -23,6 +23,10 @@ export class MapService {
     this.map = map;
   }
 
+  getMap(): Map{
+    return this.map;
+  }
+
   flyTo( coords: LngLatLike){
     if(!this.isMapReady) throw Error('El mapa no esta inicializado');
 

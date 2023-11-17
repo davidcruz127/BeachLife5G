@@ -45,9 +45,9 @@ export class MapViewComponent implements AfterViewInit {
       style: 'mapbox://styles/mapbox/streets-v12?optimize=true',
       //style: 'mapbox://styles/davidcruz127/clozw54gp016s01pbgux8fhsl',
       center: [-15.42785, 28.14093],
-      zoom: 14,
-      bearing: 190,
-      pitch: 20
+      zoom: 13,
+      bearing: 200,
+      pitch: 15
 
     });
 
@@ -74,7 +74,7 @@ export class MapViewComponent implements AfterViewInit {
     // TODO: Pendiente animación lento como cammello
     map.flyTo({
         center: [-15.42785, 28.14093],
-        zoom: 14.9,
+        zoom: 14.6,
         bearing: 80,
         pitch: 78,
         duration: 8000, // Animate over 12 seconds

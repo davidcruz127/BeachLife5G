@@ -6,6 +6,9 @@ import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
 import { GalleriaModule } from 'primeng/galleria';
 import { CarouselModule } from 'primeng/carousel';
+import { MapsModule } from 'src/app/maps/maps.module';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	imports: [
@@ -14,7 +17,10 @@ import { CarouselModule } from 'primeng/carousel';
 		ButtonModule,
 		ImageModule,
 		GalleriaModule,
-		CarouselModule
+		CarouselModule,
+        MapsModule,
+        SelectButtonModule,
+        FormsModule
 	],
 	declarations: [MediaDemoComponent]
 })

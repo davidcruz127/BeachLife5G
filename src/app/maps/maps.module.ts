@@ -7,6 +7,7 @@ import { AngularLogoComponent } from './components/angular-logo/angular-logo.com
 import { BtnMyLocationComponent } from './components/btn-my-location/btn-my-location.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { MapViewZoneComponent } from './components/map-view-zone/map-view-zone.component';
 
 
 
@@ -19,13 +20,15 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     AngularLogoComponent,
     BtnMyLocationComponent,
     SearchBarComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    MapViewZoneComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    MapScreenComponent
+    MapScreenComponent,
+    MapViewZoneComponent
   ]
 })
 export class MapsModule { }

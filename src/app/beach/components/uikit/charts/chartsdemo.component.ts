@@ -13,6 +13,8 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
 
     pieData: any;
 
+    locData: any;
+
     polarData: any;
 
     radarData: any;
@@ -44,21 +46,21 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
         const textColor = documentStyle.getPropertyValue('--text-color');
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
-        
+
         this.barData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['Agosto', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre'],
             datasets: [
                 {
-                    label: 'My First dataset',
+                    label: 'Real',
                     backgroundColor: documentStyle.getPropertyValue('--primary-500'),
                     borderColor: documentStyle.getPropertyValue('--primary-500'),
-                    data: [65, 59, 80, 81, 56, 55, 40]
+                    data: [10065, 5900, 8000, 8100, 5600, 5500, 4000]
                 },
                 {
-                    label: 'My Second dataset',
+                    label: 'Estimación',
                     backgroundColor: documentStyle.getPropertyValue('--primary-200'),
                     borderColor: documentStyle.getPropertyValue('--primary-200'),
-                    data: [28, 48, 40, 19, 86, 27, 90]
+                    data: [2800, 4800, 4000, 1900, 8600, 2700, 9000]
                 }
             ]
         };
@@ -97,10 +99,10 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
         };
 
         this.pieData = {
-            labels: ['A', 'B', 'C'],
+            labels: ['Paseo', 'Arena', 'Mar'],
             datasets: [
                 {
-                    data: [540, 325, 702],
+                    data: [1240, 325, 102],
                     backgroundColor: [
                         documentStyle.getPropertyValue('--indigo-500'),
                         documentStyle.getPropertyValue('--purple-500'),
@@ -110,6 +112,26 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                         documentStyle.getPropertyValue('--indigo-400'),
                         documentStyle.getPropertyValue('--purple-400'),
                         documentStyle.getPropertyValue('--teal-400')
+                    ]
+                }]
+        };
+
+        this.locData = {
+            labels: ['Estatico', 'Caminando', 'Corriendo', 'Nadando'],
+            datasets: [
+                {
+                    data: [1240, 425, 102, 50],
+                    backgroundColor: [
+                        documentStyle.getPropertyValue('--indigo-500'),
+                        documentStyle.getPropertyValue('--purple-500'),
+                        documentStyle.getPropertyValue('--teal-500'),
+                        documentStyle.getPropertyValue('--green-500')
+                    ],
+                    hoverBackgroundColor: [
+                        documentStyle.getPropertyValue('--indigo-400'),
+                        documentStyle.getPropertyValue('--purple-400'),
+                        documentStyle.getPropertyValue('--teal-400'),
+                        documentStyle.getPropertyValue('--green-400')
                     ]
                 }]
         };
@@ -126,19 +148,19 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
         };
 
         this.lineData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
             datasets: [
                 {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    label: 'Actual',
+                    data: [650, 590, 800, 810, 560, 550, 400],
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-500'),
                     borderColor: documentStyle.getPropertyValue('--primary-500'),
                     tension: .4
                 },
                 {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90],
+                    label: 'Estimación',
+                    data: [280, 480, 600, 590, 860, 270, 300],
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-200'),
                     borderColor: documentStyle.getPropertyValue('--primary-200'),
@@ -265,5 +287,5 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
             this.subscription.unsubscribe();
         }
     }
-    
+
 }

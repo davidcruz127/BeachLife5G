@@ -21,9 +21,9 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Datos Usuarios',
+                label: 'Ocupación',
                 items: [
-                    { label: 'Ocupación', icon: 'pi pi-fw pi-users', routerLink: ['/uikit/charts'] },
+                    { label: 'Visitantes', icon: 'pi pi-fw pi-users', routerLink: ['/uikit/charts'] },
                     { label: 'Distribución', icon: 'pi pi-fw pi-map', routerLink: ['/uikit/media'] },
                 ]
             },

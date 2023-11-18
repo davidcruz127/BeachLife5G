@@ -3,20 +3,30 @@
         <div class="card">
             <h5>Nivel de Ocupación</h5>
             <div class="flex">
-                <div class="card col-2 mb-4 mt-4 mr-4">
-                    <h6>Zona A</h6>
-                    <p-selectButton (click)="updateData()" [options]="stateOptions" [(ngModel)]="zone_A" optionLabel="label" optionValue="value"></p-selectButton>
+
+                <div class="card col-3 text-white bg-danger mb-4 mt-4 mr-4" style="max-width: 18rem;background-color: #FF1717;">
+                    <div class="card-body">
+                      <h5 class="card-title">Alto</h5>
+                      <p class="card-text">El aforo de la zona se encuentra superior al 80% de su capacidad.</p>
+                    </div>
                 </div>
-                <div class="card col-2  mb-4 mt-4 mr-4">
-                    <h6>Zona B</h6>
-                    <p-selectButton (click)="updateData()"  [options]="stateOptions" [(ngModel)]="zone_B" optionLabel="label" optionValue="value"></p-selectButton>
+
+                <div class="card text-white mb-4 mt-4 mr-4" style="max-width: 18rem;background-color: #EBCC52;">
+                    <div class="card-body">
+                      <h5 class="card-title">Medio</h5>
+                      <p class="card-text">El aforo de la zona se encuentra superior entre 40% y 80% de su capacidad.</p>
+                    </div>
                 </div>
-                <div class="card col-2  mb-4 mt-4">
-                    <h6>Zona C</h6>
-                    <p-selectButton (click)="updateData()"  [options]="stateOptions" [(ngModel)]="zone_C" optionLabel="label" optionValue="value"></p-selectButton>
+
+                <div class="card text-white mb-4 mt-4 mr-4" style="max-width: 18rem;background-color: #7ED958;">
+                    <div class="card-body">
+                      <h5 class="card-title">Bajo</h5>
+                      <p class="card-text">El aforo de la zona es inferior al 40% de su capacidad.</p>
+                    </div>
                 </div>
 
             </div>
+
             <app-map-view-zone [zones]="zonesData"></app-map-view-zone>
 
         </div>

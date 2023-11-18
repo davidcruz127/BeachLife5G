@@ -10,7 +10,7 @@ import { MapService } from './map.service';
 export class PlacesService {
 
 
-  public userLocation?: [number, number] = [123, 3232];
+  public userLocation?: [number, number] = [-15.44263586198008, 28.13312592503553];
 
   public isLoadingPlaces: boolean = false;
   public places: Feature[] = [];

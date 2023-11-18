@@ -30,7 +30,7 @@ export class MapViewZoneComponent {
             container: this.mapDivElement.nativeElement, // container ID
             style: 'mapbox://styles/mapbox/streets-v12?optimize=true',
             center: [-15.44200, 28.13950],
-            zoom: 14.7,
+            zoom: 14.5,
             bearing: 130,
 
         });

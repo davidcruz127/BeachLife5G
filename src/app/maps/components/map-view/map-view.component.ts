@@ -83,12 +83,9 @@ export class MapViewComponent implements AfterViewInit {
         });
 
     // Definimos PopUp
-    /*
     const popup = new Popup()
       .setHTML(`
-        <h6>Aqui estoy</h6>
-        <span>Estoy en este lugar del mundo</span>
-      `);
+        <h6>Usted esta aquí</h6>`);
 
     // Creamos Marcador y lo añadimos al mapa
     new Marker({color: 'red'})
@@ -97,7 +94,7 @@ export class MapViewComponent implements AfterViewInit {
       .addTo(map)
 
     this.mapService.setMap(map);
-    */
+
   }
 
 }
